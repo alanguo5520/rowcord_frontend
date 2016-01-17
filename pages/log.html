@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log Workouts</title>
+</head>
+<body>
+<div class="jumbotron text-center">
+    <h1>Log Workouts</h1>
+</div>
+<div>
+    <button ng-click="toggleSingleTime()">Single Time</button>
+    <form ng-show="showSingleTime">
+        Minutes:<br>
+        <input style="text"><br>
+        Split:<br>
+        <input style="text"><br>
+        Total distance:<br>
+        <input style="text"><br>
+        Stroke rate:<br>
+        <input style="text"><br>
+    </form>
+    <button ng-click="toggleSingleDist()">Single Distance</button>
+    <form ng-show="showSingleDist">
+        Distance:<br>
+        <input style="text"> meters<br>
+        Split:<br>
+        <input style="text"><br>
+        Total time:<br>
+        <input style="text"><br>
+        Stroke rate:<br>
+        <input style="text"><br>
+    </form>
+    <button ng-click="toggleIntTime()">Intervals: Time</button>
+    <form ng-show="showIntTime">
+        Time per interval:<br>
+        <input style="text"><br>
+        Rest between intervals:<br>
+        <input style="text"><br>
+        Number of intervals:<br>
+        <input style="text"><br>
+    </form>
+    <button ng-click="toggleIntDist()">Intervals: Distance</button>
+    <form ng-show="showIntDist">
+        Distance per interval:<br>
+        <input style="text"><br>
+        Rest between intervals:<br>
+        <input style="text"><br>
+        Number of intervals:<br>
+        <input style="text"><br>
+    </form>
+    <button ng-click="toggleIntVar()">Intervals: Variable</button>
+    <div ng-show="toggleIntVar" data-ng-repeat="choice in choices">
+        <input type="text" placeholder="Time">
+        <input type="text" placeholder="Rest">
+        <button ng-show=$last ng-click="addNewChoice()">+</button>
+        <button ng-show=$last ng-click="removeChoice()">-</button>
+    </div>
+
+</div>
+</body>
+</html>
